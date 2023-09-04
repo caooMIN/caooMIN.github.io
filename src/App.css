@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons {
+  font-size: 24px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #00aced; 
+}
+.img{
+  height:20rem;
+}
+.carded{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

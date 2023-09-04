@@ -1,0 +1,13 @@
+.shape:hover{
+    transform: rotateX(360deg);
+    transition:all 0.4s ease;
+}
+.cuisine-card2{
+    background-color: beige;
+    width: 8%;
+    height: 90px;
+    align-self: center;
+    margin: auto;
+    padding-top: 1rem;
+    clip-path:polygon(83% 19%, 100% 50%, 83% 78%, 0 80%, 25% 50%, 0 20%);
+}
