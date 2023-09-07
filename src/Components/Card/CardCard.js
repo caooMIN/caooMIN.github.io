@@ -40,7 +40,7 @@ const CardCard = ({ food }) => {
 
           <Button
             className="delete-button"
-            onClick={() => dispatch(delete_card(food.id))}
+            onClick={() => handleDelete}
           >
             Delete
           </Button>
