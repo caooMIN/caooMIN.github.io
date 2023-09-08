@@ -13,11 +13,10 @@ import { cuisineData } from "./Data2";
 import FoodDetails from "./Pages/FoodDetails ";
 
 function App() {
-
+// eslint-disable-next-line
   const [thefoods, useTheFoods] = useState(foodData);
+  // eslint-disable-next-line
   const [cuisine, setCuisine] = useState(cuisineData);
-console.log(useTheFoods())
-console.log(setCuisine())
   return (
     <div className="App" style={{ paddingTop: "4%" }}>
       <Navigation />
