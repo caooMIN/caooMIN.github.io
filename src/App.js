@@ -13,9 +13,11 @@ import { cuisineData } from "./Data2";
 import FoodDetails from "./Pages/FoodDetails ";
 
 function App() {
+
   const [thefoods, useTheFoods] = useState(foodData);
   const [cuisine, setCuisine] = useState(cuisineData);
-
+console.log(useTheFoods())
+console.log(setCuisine())
   return (
     <div className="App" style={{ paddingTop: "4%" }}>
       <Navigation />
