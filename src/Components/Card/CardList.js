@@ -1,7 +1,10 @@
 import "../../App.css" ;
 import React from 'react';
 import CardCard from './CardCard';
-const CardList = ({ thefoods }) => {
+import { useSelector } from "react-redux";
+const CardList = () => {
+  //
+  const thefoods = useSelector((state)=> state.foodData)
   return (
     <div className='carded'>
       {thefoods.map(food => (

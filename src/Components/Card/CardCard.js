@@ -8,18 +8,16 @@ import { Button, Modal, Form } from 'react-bootstrap';
 const CardCard = ({ food }) => {
   const dispatch = useDispatch();
   const [showEditModal, setShowEditModal] = useState(false);
-  const [editedTitle, setEditedTitle] = useState(food.title);
+
+  const [newTitle, setNewTitle] = useState(food.title);
+  const [newImage, setNewImage] = useState(food.image);
 
   const handleDelete = () => {
     dispatch(delete_card(food.id));
   };
   const handleEditSubmit = () => {
-    const updatedCard = {
-      ...food,
-      title: editedTitle,
-    };
 
-    dispatch(edit_card(updatedCard)); 
+    dispatch(edit_card(food.id, newTitle, newImage)); 
     setShowEditModal(false);
   };
 
@@ -40,7 +38,7 @@ const CardCard = ({ food }) => {
 
           <Button
             className="delete-button"
-            onClick={() => handleDelete}
+            onClick={() => handleDelete()}
           >
             Delete
           </Button>
@@ -57,8 +55,8 @@ const CardCard = ({ food }) => {
             <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
-              value={editedTitle}
-              onChange={(e) => setEditedTitle(e.target.value)}
+              value={newTitle}
+              onChange={(e) => setNewTitle(e.target.value)}
             />
           </Form.Group>
         </Modal.Body>
@@ -66,7 +64,7 @@ const CardCard = ({ food }) => {
           <Button variant="secondary" onClick={() => setShowEditModal(false)}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleEditSubmit}>
+          <Button variant="primary" onClick={()=> handleEditSubmit()}>
             Save Changes
           </Button>
         </Modal.Footer>

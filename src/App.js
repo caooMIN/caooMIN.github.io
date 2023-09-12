@@ -21,7 +21,7 @@ function App() {
     <div className="App" style={{ paddingTop: "4%" }}>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Home thefoods={thefoods} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/menu/:id" element={<MenuCard />} /> 
         <Route path="/cuisines/:id" element={<CuisinesList cuisine={cuisine} />} />
         <Route path="/food/:id" element={<FoodDetails />} />

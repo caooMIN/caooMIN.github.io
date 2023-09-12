@@ -9,11 +9,11 @@ const AddCard = () => {
   const dispatch = useDispatch();
 
   const handleAdd = () => {
-    if (newTitle.trim() !== "" && newImage.trim() !== "") {
+    
       dispatch(add_card({ id: Math.random(), title: newTitle, image: newImage }));
       setNewTitle("");
       setNewImage("");
-    }
+    
   };
 
   return (
@@ -28,7 +28,7 @@ const AddCard = () => {
         value={newImage}
         onChange={(e) => setNewImage(e.target.value)}
       />
-      <Button variant="info" onClick={handleAdd}>
+      <Button variant="info" onClick={()=> handleAdd()}>
         Add
       </Button>
     </div>
