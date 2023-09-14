@@ -6,7 +6,7 @@ import ErrorPage from "../../Pages/ErrorPage";
 
 const MenuCard = () => {
   const { id } = useParams();
-  const selectedMenu = menuData.find((menu) => menu.id === parseInt(id));
+  const selectedMenu = menuData.find((menu) => menu.id === Number(id));
 
   return (
     <Container>

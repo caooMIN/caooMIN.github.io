@@ -1,23 +1,31 @@
-import React from 'react'
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import { foodData } from '../../Data';
-import ErrorPage from '../../Pages/ErrorPage';
+import { newId, foodData2 } from '../Card/AddCard';
+import CardCard from '../Card/CardCard';
 const TheFood = () => {
-    const { id } = useParams();
-    const foodId = parseInt(id);
+  const { id } = useParams();
+  const foodId =  id | 0;
+  const selectedFood = foodData.find(item => item.id === foodId) || foodData2.find(item => item.id === newId)   ;
 
-    const selectedFood = foodData.find(item => item.id === foodId) || null;
   return (
     <Container>
       {selectedFood ? (
-        <Row className="justify-content-center">
-          <Col md={8}>
-            <Card className="my-4">
-            <h2>{selectedFood.title}</h2>
-              <Card.Img variant="top" src={selectedFood.image} alt={selectedFood.title}   style={{width: '100%',maxHeight:'60rem' }} />
-                <Card.Body>
-                <Card.Text><Card.Title>Description:</Card.Title>{selectedFood.description}</Card.Text>
+        <div className="food-details">
+          <h2>{selectedFood.title}</h2>
+          <div className="food-info">
+            <Card>
+              <Card.Img
+                src={selectedFood.image}
+                alt={selectedFood.title}
+                style={{ width: '80%',  margin: '0 auto'}}
+              />
+              <Card.Body>
+                <Card.Text>
+                  <Card.Title>Description:</Card.Title>
+                  {selectedFood.description}
+                </Card.Text>
                 <Card.Title>Nutrition Facts:</Card.Title>
                 <ul>
                   <li>Serving Size: {selectedFood.nutritionFacts.servingSize}</li>
@@ -35,13 +43,15 @@ const TheFood = () => {
                 </ul>
               </Card.Body>
             </Card>
-          </Col>
-        </Row>
+          </div>
+        </div>
       ) : (
-        <div><ErrorPage /></div>
+        <div>
+          <CardCard />
+        </div>
       )}
     </Container>
-  )
-}
+  );
+};
 
-export default TheFood
+export default TheFood;

@@ -6,7 +6,7 @@ const CuisinesList = ({cuisine}) => {
   const { id } = useParams();
   
 
-  const filteredCuisines = cuisine.filter(c => c.id === parseInt(id));
+  const filteredCuisines = cuisine.filter(c => c.id === Number(id));
 
   return (
     <div className="cuisines-list">

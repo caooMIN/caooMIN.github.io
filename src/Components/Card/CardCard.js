@@ -52,11 +52,17 @@ const CardCard = ({ food }) => {
         </Modal.Header>
         <Modal.Body>
           <Form.Group>
-            <Form.Label>Title</Form.Label>
+          <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
+            />
+            <Form.Label>Image</Form.Label>
+            <Form.Control
+              type="text"
+              value={newImage}
+              onChange={(e) => setNewImage(e.target.value)}
             />
           </Form.Group>
         </Modal.Body>
