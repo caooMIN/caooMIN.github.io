@@ -2,23 +2,12 @@ import { ADD_CARD, DELETE_CARD, EDIT_CARD } from "./ActionsTypes";
 import { foodData } from "../Data";
 
 const initialState = {
-  foodData
+  foodData  
 };
 
 export const cardReducer = (state = initialState,{type, payload}) => {
   
   switch (type) {
-    case "POPULATE_TASKS": {
-      return {
-        ...state,
-        foodData: state.foodData.map(card => ({
-          id: card.id,
-          text: card.title,
-          description: card.description,
-        })),
-      };
-      
-    }
     case DELETE_CARD:
       return {
         ...state,

@@ -2,6 +2,7 @@ export const foodData = [
   {
     id: 1,
     title: "Classic Spaghetti Bolognese",
+    rate:5,
     prepTime: "15 minutes",
     cookTime: "30 minutes",
     description: "A timeless Italian dish featuring hearty ground beef and flavorful tomato sauce served over perfectly cooked spaghetti.",
@@ -36,6 +37,7 @@ export const foodData = [
   {
     id: 2,
     title: "Roast Chicken with Vegetables",
+    rate:2,
     prepTime: "20 minutes",
     cookTime: "1.5 - 2 hours",
     description: "A comforting roasted chicken dish accompanied by tender vegetables, perfect for a hearty and wholesome meal.",
@@ -67,6 +69,7 @@ export const foodData = [
   {
     id: 3,
     title: "Vegetable Stir-Fry",
+    rate:1,
     prepTime: "15 minutes",
     cookTime: "15 minutes",
     description: "A quick and healthy stir-fry loaded with colorful vegetables and savory flavors.",
@@ -99,6 +102,7 @@ export const foodData = [
   {
     id: 4,
     title: "Caprese Salad",
+    rate:3,
     prepTime: "10 minutes",
     cookTime: "0 minutes",
     description: "A simple and refreshing salad made with fresh mozzarella, tomatoes, and basil, drizzled with olive oil and balsamic vinegar.",
@@ -127,6 +131,7 @@ export const foodData = [
   {
     id: 5,
     title: "Chocolate Chip Cookies",
+    rate:4,
     prepTime: "15 minutes",
     cookTime: "10 minutes",
     description: "Classic homemade chocolate chip cookies that are soft, chewy, and irresistibly delicious.",
@@ -162,6 +167,7 @@ export const foodData = [
   {
     id: 6,
     title: "Grilled Salmon with Asparagus",
+    rate:3,
     prepTime: "10 minutes",
     cookTime: "10 minutes",
     description: "Delicious grilled salmon paired with tender asparagus, a perfect combination for a healthy and flavorful dish.",
@@ -191,6 +197,7 @@ export const foodData = [
   {
     id: 7,
     title: "Mediterranean Chickpea Salad",
+    rate:3,
     prepTime: "15 minutes",
     cookTime: "0 minutes",
     description: "A refreshing Mediterranean salad featuring chickpeas, fresh vegetables, and a zesty dressing.",

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { delete_card, edit_card } from '../../JS/Actions';
 import { Button, Modal, Form } from 'react-bootstrap';
+import ReactStars from 'react-stars';
+import './goat.css';
 
 const CardCard = ({ food }) => {
   const dispatch = useDispatch();
@@ -15,19 +17,20 @@ const CardCard = ({ food }) => {
   const handleDelete = () => {
     dispatch(delete_card(food.id));
   };
-  const handleEditSubmit = () => {
 
+  const handleEditSubmit = () => {
     dispatch(edit_card(food.id, newTitle, newImage)); 
     setShowEditModal(false);
   };
 
   return (
     <div>
-      <Card style={{ width: '18rem' }} className='goat'>
-        <Card.Title>{food.title}</Card.Title>
+      <Card  style={{ width: '18rem' }} className='goat card-hover'>
+      <Card.Title>{food?.title}</Card.Title>
         <Link to={`/food/${food.id}`} key={food.id}>
-          <Card.Img className='img' variant="top" src={food.image} />
+          <Card.Img className='img' variant="top" src={food?.image} />  
         </Link>
+        <ReactStars count={5} value={food.rate} edit={false} size={27} color2={'#ffd700'} />
         <div className="button-container">
           <Button
             className="edit-button"
@@ -39,6 +42,7 @@ const CardCard = ({ food }) => {
           <Button
             className="delete-button"
             onClick={() => handleDelete()}
+            variant='danger'
           >
             Delete
           </Button>
@@ -52,7 +56,7 @@ const CardCard = ({ food }) => {
         </Modal.Header>
         <Modal.Body>
           <Form.Group>
-          <Form.Label>Title</Form.Label>
+            <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
               value={newTitle}

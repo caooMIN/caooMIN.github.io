@@ -1,7 +1,7 @@
-.goat:hover{
-    transform: scale(1.1);
-    transition: all 0.5s ease;
+.card-hover {
+    transition: transform 0.2s ease; 
+    margin: 2px;
 }
-.goat{
-    margin: 2rem;
-}
+.card-hover:hover {
+    transform: scale(1.05);
+}    

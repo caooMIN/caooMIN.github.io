@@ -15,17 +15,11 @@ const AddCard = () => {
   const [newTitle, setNewTitle] = useState("");
   const [newImage, setNewImage] = useState("");
   const [NDescription, setNDescription] = useState("");
-  const [NNutrition, setNNutrition] = useState("");
-  const [NPrep, setNPrep] = useState("");
-  const [NCook, setNCook] = useState("");
-  const [NIngredients, setNIngredients] = useState("");
   const dispatch = useDispatch();
 
-  const foodData2 = {newId,newTitle,newImage,NDescription,NNutrition,NPrep,NCook,NIngredients}
-  console.log(foodData2)
   const handleAdd = () => {
     
-      dispatch(add_card({ id: newId, title: newTitle, image: newImage }));
+      dispatch(add_card({ id: newId || Math.random(), title: newTitle || "Default Title",rate:1, image: newImage || 'https://i.pinimg.com/236x/56/4c/09/564c092842aa0773635a0b10df56bb9a.jpg' ,description:NDescription }));
       setNewId("");
       setNewTitle("");
       setNewImage("");
@@ -35,23 +29,19 @@ const AddCard = () => {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="info" onClick={handleShow}>
         Add New Card !      
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-         <Modal.Title>Hi there</Modal.Title>
+        <Modal.Title>Hi there</Modal.Title>
         </Modal.Header>
 
-        <Form.Control  placeholder="id"  value={newId}  onChange={(e) => setNewId(e.target.value)}/>
-        <Form.Control  placeholder="title"  value={newTitle}  onChange={(e) => setNewTitle(e.target.value)}/>
-        <Form.Control  placeholder="image URL"  value={newImage} onChange={(e) => setNewImage(e.target.value)}/>
+        <Form.Control placeholder="id"  value={newId}  onChange={(e) => setNewId(e.target.value)}/>
+        <Form.Control placeholder="title"  value={newTitle}  onChange={(e) => setNewTitle(e.target.value)}/>
+        <Form.Control placeholder="image URL"  value={newImage} onChange={(e) => setNewImage(e.target.value)}/>
         <Form.Control placeholder="Description"  value={NDescription}  onChange={(e) => setNDescription(e.target.value)} />
-        <Form.Control placeholder="Nutrition"  value={NNutrition}  onChange={(e) => setNNutrition(e.target.value)} />
-        <Form.Control placeholder="Prep"  value={NPrep}  onChange={(e) => setNPrep(e.target.value)} />
-        <Form.Control placeholder="Cook"  value={NCook}  onChange={(e) => setNCook(e.target.value)} />
-        <Form.Control placeholder="Ingredients"  value={NIngredients}  onChange={(e) => setNIngredients(e.target.value)} />
 
         <Button variant="info" onClick={()=> handleAdd()}>
         Add
@@ -64,8 +54,6 @@ const AddCard = () => {
         </Modal.Footer>
       </Modal>
 
-      
-      
     </div>
   );
 };

@@ -13,5 +13,4 @@ const CardList = () => {
     </div>
   );
 };
-
 export default CardList;
