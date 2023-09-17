@@ -1,6 +1,28 @@
+/* Media query for screens up to 768px wide */
+@media (max-width: 768px) {
+  .carded {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 45%;
+    margin: 1rem;
+  }
+}
+
+/* Media query for screens up to 480px wide */
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
+
 .App {
   text-align: center;
 }
+
 .footer {
   background-color: #333;
   color: #fff;
@@ -33,11 +55,24 @@
 .social-icons a:hover {
   color: #00aced; 
 }
-.img{
-  height:20rem;
+
+.img {
+  height: 20rem;
 }
-.carded{
+
+.carded {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.navbar-brand-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.5s ease-in-out;
+}
+
+.navbar-brand-link:hover {
+  transform: rotateX(360deg);
 }
