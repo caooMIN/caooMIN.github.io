@@ -1,7 +1,7 @@
 export const foodData = [
   {
     id: 1,
-    title: "Classic Spaghetti Bolognese",
+    title: "Roast Chicken with Vegetables",
     rate:5,
     prepTime: "15 minutes",
     cookTime: "30 minutes",
@@ -36,7 +36,7 @@ export const foodData = [
   },
   {
     id: 2,
-    title: "Roast Chicken with Vegetables",
+    title: "Classic Spaghetti Bolognese",
     rate:2,
     prepTime: "20 minutes",
     cookTime: "1.5 - 2 hours",
