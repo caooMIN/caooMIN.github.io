@@ -3,21 +3,22 @@ import CardCard from './CardCard';
 import { useSelector } from 'react-redux';
 
 const CardList = () => {
+  const foodData = useSelector((state) => state.foodData);
   const [selectedRate, setSelectedRate] = useState('all');
-  const thefoods = useSelector((state)=> state.foodData)
+
   const handleRateChange = (e) => {
     setSelectedRate(e.target.value);
   };
 
   const filteredFoods = selectedRate === 'all'
-    ? thefoods
-    : thefoods.filter(food => food.rate.toString() === filteredFoods);
+    ? foodData
+    : foodData.filter(food => food.rate.toString() === selectedRate);
 
   return (
     <div>
       <h2>Filter by Rating:</h2>
       <select
-        value={filteredFoods}
+        value={selectedRate}
         onChange={handleRateChange}
       >
         <option value="all">All</option>
@@ -28,7 +29,7 @@ const CardList = () => {
         <option value="5">5 Stars</option>
       </select>
       <div className='carded'>
-        {thefoods.map(food => (
+        {filteredFoods.map(food => (
           <CardCard food={food} key={food.id} />
         ))}
       </div>
