@@ -1,4 +1,5 @@
-import React from 'react';
+// Home.js
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { add_card } from '../JS/Actions';
 import AddCard from '../Components/Card/AddCard';
@@ -6,6 +7,7 @@ import CardList from '../Components/Card/CardList';
 
 const Home = ({ thefoods }) => {
   const dispatch = useDispatch();
+  const [selectedRate, setSelectedRate] = useState('');
 
   const handleAddCard = (newCardData) => {
     dispatch(add_card(newCardData));
@@ -15,7 +17,7 @@ const Home = ({ thefoods }) => {
     <div>
       <h1>Our Best Meals</h1>
       <AddCard onAddCard={handleAddCard} />
-      <CardList thefoods={thefoods} />
+      <CardList thefoods={thefoods} selectedRate={selectedRate} />
     </div>
   );
 };
