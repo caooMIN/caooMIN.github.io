@@ -1,4 +1,3 @@
-// RateFilter.js
 import React, { useState } from 'react';
 
 const RateFilter = ({ onRateChange }) => {

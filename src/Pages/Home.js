@@ -1,4 +1,3 @@
-// Home.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { add_card } from '../JS/Actions';
@@ -7,6 +6,7 @@ import CardList from '../Components/Card/CardList';
 
 const Home = ({ thefoods }) => {
   const dispatch = useDispatch();
+  // eslint-disable-next-line
   const [selectedRate, setSelectedRate] = useState('');
 
   const handleAddCard = (newCardData) => {
