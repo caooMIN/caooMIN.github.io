@@ -50,6 +50,7 @@ const FoodDetails = () => {
         <p>Ingredients not for you</p>
       )}
 
+      {/* Add more details as needed */}
       <ToastContainer />
     </div>
   );

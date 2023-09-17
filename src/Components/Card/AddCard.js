@@ -19,7 +19,7 @@ const AddCard = () => {
 
   const handleAdd = () => {
     
-      dispatch(add_card({ id: newId || Math.random(), title: newTitle || "Default Title",rate:1, image: newImage || 'https://i.pinimg.com/236x/56/4c/09/564c092842aa0773635a0b10df56bb9a.jpg' ,description:NDescription }));
+      dispatch(add_card({ id: newId || Math.random(), title: newTitle || "Default Title", rate:1 , image: newImage || 'https://i.pinimg.com/236x/56/4c/09/564c092842aa0773635a0b10df56bb9a.jpg' ,description:NDescription }));
       setNewId("");
       setNewTitle("");
       setNewImage("");
